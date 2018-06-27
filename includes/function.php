@@ -2,12 +2,12 @@
 class motto{
     #传入一个参数
     function one($style){
-        $poetry=file('./database/poetry.db');
-        $music=file('./database/music.db');
-        $philosophy=file('./database/philosophy.db');
+        $poetry=file('../database/poetry.db');
+        $music=file('../database/music.db');
+        $philosophy=file('../database/philosophy.db');
         $mottoall=array_merge($poetry,$music,$philosophy);
         $mottoallcount=count($mottoall);
-        $mottoany=$mottoall[mt_rand(0,$mottoallcount)];
+        $mottoany=$mottoall[mt_rand(0,$mottoallcount-1)];
         $mottoanyarray=explode('###',$mottoany);
         switch($style){
             case 'text':
