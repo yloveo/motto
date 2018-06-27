@@ -1,6 +1,6 @@
 <?php
 class MOTTO{
-
+	#
     #--$GET[]传入一个参数"$_GET['style']"
     function MOTTO_ONE($_GET['style'],$CONNECT,$DB_TABLE){
         $SQL_LINES="select count(*) from ".$DB_TABLE;
