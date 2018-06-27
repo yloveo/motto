@@ -35,11 +35,11 @@ class DATABASE{
 class MOTTO{
 	#---传入参数$_GET['style']
 	function one($style){
-		switch(){
-			case 'a':
+		switch($style){
+			case 'aaaaaa':
 			#
 			break;
-			case 'b':
+			case 'bbbbbb':
 			#
 			break;
 			default:
@@ -48,22 +48,69 @@ class MOTTO{
 	}
 	#---传入参数$_GET['style']&$_GET['type']
 	function two($style,$type){
-		switch(){
-			case 'a':
-			#
+		switch($style){
+			case 'aaaaaa':
+			switch($type){
+				case 'aaaaa':
+				#
+				break;
+				case 'bbbbb':
+				#
+				break;
+				default:
+				#
+			}
 			break;
-			case 'b':
-			#
+			case 'bbbbbb':
+			switch($type){
+				case 'aaaaa':
+				#
+				break;
+				case 'bbbbb':
+				#
+				break;
+				default:
+				#
+			}
 			break;
 			default:
-			#
+			switch($type){
+				case 'aaaaa':
+				#
+				break;
+				case 'bbbbb':
+				#
+				break;
+				default:
+				#
+			}
 		}
 	}
 }
+#---定义网页内容
 $html=<<<HTML
 
 HTML;
-echo $html;
+#---获取GET数据
+if(empty($_GET['style'])){echo $html;}else{
+	if($_GET['style']!='aaaaaa'&&$_GET['style']!='bbbbbb'&&$_GET['style']!='cccccc'){echo $html;}else{
+		if(empty($_GET['type'])){
+			#传入参数$_GET['style']
+			$Motto=new MOTTO;
+			$Motto->one($_GET['style']);
+		}else{
+			if($_GET['type']!='aaaaa'&&$_GET['type']!='bbbbb'&&$_GET['type']!='ccccc'){echo $html;}else{
+				#传入参数$_GET['style']&&$_GET['type']
+				#---实例化数据库
+				$Mooto
+				#---实例化MOTTO
+				$Motto=new MOTTO;
+				$Motto->two($_GET['style'],$_GET['type']):
+			}
+		}
+	}
+}
+
 
 $EndTime=microtime(true);#结束计时
 ?>
